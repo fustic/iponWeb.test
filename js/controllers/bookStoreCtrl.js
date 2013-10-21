@@ -10,7 +10,7 @@ bookStore.controller('BookStoreCtrl', function TodoCtrl($scope, $location, bookS
 	var books = $scope.books = bookStoreStorage.get();
 
     if (!(books && books.length)) {
-        books = bookList;
+        books = $scope.books = bookList;
         bookStoreStorage.put(books);
     }
     $scope.books.forEach(function(data){
