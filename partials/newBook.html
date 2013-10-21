@@ -1,0 +1,52 @@
+<form class="new-book-form form-horizontal" ng-submit="addBook()" name="newBook">
+    <div class="control-group">
+        <label for="id_title" class="control-label input-small">Name</label>
+        <div class="controls">
+            <input id="id_title" name="title" ng-model="newbook.title" type="text" class="input-xxlarge" ng-required="true" placeholder="book title"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="id_author" class="control-label">Author</label>
+        <div class="controls">
+            <input id="id_author" name="author" ng-model="newbook.author" type="text" placeholder="author name"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="id_description" class="control-label">Description</label>
+        <div class="controls">
+            <textarea id="id_description" class="input-xxlarge" name="description"  ng-model="newbook.description" rows="2" cols="80" placeholder="book description"></textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="id_category" class="control-label">Category</label>
+        <div class="controls">
+            <select id="id_category" name="category" ng-model="newbook.category" ng-required="true">
+                <option value="literature" ng-selected="selected">Literature</option>
+                <option value="cookbook">Cookbook</option>
+                <option value="computers">Computers</option>
+                <option value="business">Business</option>
+                <option value="science">Science</option>
+                <option value="fantasy">Sci-Fi and Fantasy</option>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="id_price" class="control-label">Price</label>
+        <div class="controls">
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                <input type="text" id="id_price" class="input-mini" name="price" ng-model="newbook.price" value="10.00" float ng-required="true" placeholder="10.00"/>
+                <span ng-show="newBook.newbook.price.$error.float">This is not a valid email.</span>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="id_quantity" class="control-label">Quantity</label>
+        <div class="controls"><input type="number" integer ng-required="true" id="id_quantity" class="input-mini" name="quantity" ng-model="newbook.quantity" value="15" placeholder="15" /></div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button ng-disabled="newBook.$invalid" type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>

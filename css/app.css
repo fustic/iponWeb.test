@@ -1,0 +1,5 @@
+.book-old-price {text-decoration:line-through;}
+.book-price {font-weight: bold; color: green;}
+.book-discount {white-space:nowrap; display: block;}
+.container .search-query {margin-bottom: 20px;}
+.ng-invalid.ng-dirty{border-color: rgb(231, 58, 53) !important;}

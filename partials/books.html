@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+    <tbody class="books-container">
+
+    <tr class="book" ng-repeat="book in books | filter:query">
+        <td class="row">
+            <div class="span2 text-center">
+                <img class="book-image" ng-src="img/covers/{{book.image && book.image || 'book-icon.png'}}" width="128" alt="" />
+                <ul class="muted unstyled">
+                    <li>Category: <span class="book-category">{{book.category}}</span></li>
+                    <li>In stock: <span class="book-quantity">{{book.quantity}}</span></li>
+                </ul>
+                <button type="button" ng-click="removeBook(book)" class="btn btn-danger btn-small book-delete">Delete</button>
+                &nbsp;<button type="button" ng-click="editBook(book)" class="btn btn-small book-edit">Edit</button>
+            </div>
+            <div class="span7">
+                <p><em class="book-author">{{book.author}}</em></p>
+                <p><strong class="book-title">{{book.title}}</strong></p>
+                <p class="book-description">{{book.description}}</p>
+            </div>
+        </td>
+        <td>
+            <span class="book-old-price muted" ng-show="book.discount">{{book.oldPrice}}$</span>
+            <big class="book-price">{{book.price}}$</big>
+            <small class="book-discount" ng-show="book.discount">(discount <span class="book-discount-value">{{book.discount}}%</span>)</small>
+        </td>
+    </tr>
+    </tbody>
+</table>
